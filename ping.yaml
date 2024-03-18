@@ -1,8 +1,9 @@
 ---
 - name: Ping server
-  hosts: all
+  hosts: localhost
   gather_facts: no
   
   tasks:
-    - name: Ping the server
-      ping:
+    - name: Test reachability to 10.10.10.10 using default vrf
+      ansible.netcommon.net_ping:
+        dest: hbeta1.netbird.selfhosted
